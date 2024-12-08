@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details</title>
+    <link rel="stylesheet" href="internal/static/order.css">
+</head>
+<body>
+    <h1>Order Details</h1>
+
+    <h2>Order Info</h2>
+    <p><strong>Order UID:</strong> {{ .order.OrderUID }}</p>
+    <p><strong>Track Number:</strong> {{ .order.TrackNumber }}</p>
+    <p><strong>Entry:</strong> {{ .order.Entry }}</p>
+    <p><strong>Locale:</strong> {{ .order.Locale }}</p>
+    <p><strong>Internal Signature:</strong> {{ .order.InternalSignature }}</p>
+    <p><strong>Customer ID:</strong> {{ .order.CustomerID }}</p>
+    <p><strong>Delivery Service:</strong> {{ .order.DeliveryService }}</p>
+    <p><strong>Shard Key:</strong> {{ .order.ShardKey }}</p>
+    <p><strong>SM ID:</strong> {{ .order.SmID }}</p>
+    <p><strong>Date Created:</strong> {{ .order.DateCreated.Format "2006-01-02 15:04:05" }}</p>
+    <p><strong>OOF Shard:</strong> {{ .order.OofShard }}</p>
+
+    <h2>Delivery Info</h2>
+    <p><strong>Name:</strong> {{ .order.Delivery.Name }}</p>
+    <p><strong>Phone:</strong> {{ .order.Delivery.Phone }}</p>
+    <p><strong>Zip:</strong> {{ .order.Delivery.Zip }}</p>
+    <p><strong>City:</strong> {{ .order.Delivery.City }}</p>
+    <p><strong>Address:</strong> {{ .order.Delivery.Address }}</p>
+    <p><strong>Region:</strong> {{ .order.Delivery.Region }}</p>
+    <p><strong>Email:</strong> {{ .order.Delivery.Email }}</p>
+
+    <h2>Payment Info</h2>
+    <p><strong>Transaction:</strong> {{ .order.Payment.Transaction }}</p>
+    <p><strong>Request ID:</strong> {{ .order.Payment.RequestID }}</p>
+    <p><strong>Currency:</strong> {{ .order.Payment.Currency }}</p>
+    <p><strong>Provider:</strong> {{ .order.Payment.Provider }}</p>
+    <p><strong>Amount:</strong> {{ .order.Payment.Amount }}</p>
+    <p><strong>Payment Date:</strong> {{ .order.Payment.PaymentDt }}</p>
+    <p><strong>Bank:</strong> {{ .order.Payment.Bank }}</p>
+    <p><strong>Delivery Cost:</strong> {{ .order.Payment.DeliveryCost }}</p>
+    <p><strong>Goods Total:</strong> {{ .order.Payment.GoodsTotal }}</p>
+    <p><strong>Custom Fee:</strong> {{ .order.Payment.CustomFee }}</p>
+
+    <h2>Items</h2>
+    <table>
+        <tr>
+            <th>CHRT ID</th>
+            <th>Track Number</th>
+            <th>Price</th>
+            <th>RID</th>
+            <th>Name</th>
+            <th>Sale</th>
+            <th>Size</th>
+            <th>Total Price</th>
+            <th>NM ID</th>
+            <th>Brand</th>
+            <th>Status</th>
+        </tr>
+        {{ range .order.Items }}
+        <tr>
+            <td>{{ .ChrtID }}</td>
+            <td>{{ .TrackNumber }}</td>
+            <td>{{ .Price }}</td>
+            <td>{{ .RID }}</td>
+            <td>{{ .Name }}</td>
+            <td>{{ .Sale }}</td>
+            <td>{{ .Size }}</td>
+            <td>{{ .TotalPrice }}</td>
+            <td>{{ .NmID }}</td>
+            <td>{{ .Brand }}</td>
+            <td>{{ .Status }}</td>
+        </tr>
+        {{ end }}
+    </table>
+</body>
+</html>

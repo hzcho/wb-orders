@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+</head>
+<body>
+    <h1>Order List</h1>
+    <ul>
+        {{range .IDs}}
+            <li>
+                <a href="/api/orders/{{.}}">Order ID: {{.}}</a>
+            </li>
+        {{end}}
+    </ul>
+</body>
+</html>
