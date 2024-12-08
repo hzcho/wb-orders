@@ -1,17 +1,12 @@
 ```markdown
 # Order Service System
-
-## Описание проекта
-
-Система предоставляет возможность получать список заказов и информацию о конкретном заказе через REST API. Также она поддерживает конфигурацию для записи данных в Kafka.
-
 ---
 
 ## Запуск системы
 
 1. Перейдите в корневую папку проекта.
 2. Запустите систему командой:  
-   ```bash
+   ```
    sudo docker compose --env-file ./order-service/.env.wb.example --env-file ./producer-simulator/.env.producer.example up
    ```
 
@@ -80,4 +75,3 @@ SCHEDULAR_PERIOD=10s
 
 Если возникли вопросы или проблемы, обратитесь к разработчику.  
 email: ubelwertyas@gmail.com
-```
