@@ -1,12 +1,13 @@
-```markdown
 # Order Service System
+
 ---
 
 ## Запуск системы
 
 1. Перейдите в корневую папку проекта.
 2. Запустите систему командой:  
-   ```
+```markdown
+   ```bash
    sudo docker compose --env-file ./order-service/.env.wb.example --env-file ./producer-simulator/.env.producer.example up
    ```
 
@@ -35,7 +36,7 @@
 
 ### Параметры пагинации
 
-Вы можете настроить пагинацию, добавив параметры `page` и `limit` в запрос:  
+Для настройки пагинации добавьте параметры `page` и `limit` в запрос:  
 Пример:  
 `http://localhost:8080/api/orders/?page=0&limit=10`
 
@@ -48,13 +49,17 @@
 
 ### Конфигурация Order Service
 
-Чтобы изменить параметры `order-service`, отредактируйте файл `./order-service/.env.wb.example`.
+Для изменения параметров `order-service` отредактируйте файл:  
+`./order-service/.env.wb.example`.
 
 ---
 
 ### Конфигурация Producer Simulator
 
-Для изменения скорости записи в Kafka или параметров подключения к брокерам, измените файл `./producer-simulator/.env.producer.example`. Пример параметров:
+Для настройки скорости записи в Kafka или изменения параметров подключения к брокерам отредактируйте файл:  
+`./producer-simulator/.env.producer.example`.  
+
+Пример параметров:
 
 ```env
 PRODUCER_SERVERS=kafka:9092
@@ -69,9 +74,10 @@ SCHEDULAR_PERIOD=10s
 - **PRODUCER_ACKS** — режим подтверждений Kafka.  
 - **SCHEDULAR_PERIOD** — интервал записи данных продьюсером.
 
----  
+---
 
-## Контакты для обратной связи
+## Контакты
 
-Если возникли вопросы или проблемы, обратитесь к разработчику.  
-email: ubelwertyas@gmail.com
+Если у вас возникли вопросы или проблемы, свяжитесь с разработчиком:  
+**Email:** ubelwertyas@gmail.com
+```
