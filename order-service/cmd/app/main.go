@@ -14,6 +14,8 @@ import (
 func main() {
 	ctx := context.Background()
 	log := logrus.New()
+	log.SetFormatter(&logrus.JSONFormatter{})
+
 	cfg, err := config.InitConfig("")
 	if err != nil {
 		panic(err)

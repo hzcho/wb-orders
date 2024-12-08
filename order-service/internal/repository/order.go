@@ -4,7 +4,6 @@ import (
 	"context"
 	"wb-orders/internal/domain/model"
 
-	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 
@@ -188,9 +187,9 @@ func (r *Order) GetById(ctx context.Context, id string) (model.Order, error) {
 		&order.ShardKey, &order.SmID, &order.DateCreated, &order.OofShard,
 	)
 	if err != nil {
-		if err == pgx.ErrNoRows {
-			return model.Order{}, nil
-		}
+		// if err == pgx.ErrNoRows {
+		// 	return model.Order{}, nil
+		// }
 		return model.Order{}, err
 	}
 
