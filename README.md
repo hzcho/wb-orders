@@ -7,7 +7,6 @@
 1. Перейдите в корневую папку проекта.
 2. Запустите систему командой:  
 ```markdown
-   ```bash
    sudo docker compose --env-file ./order-service/.env.wb.example --env-file ./producer-simulator/.env.producer.example up
    ```
 
